@@ -8,14 +8,31 @@
 </head>
 <body>
 
-    <!-- Snow Globe Container -->
+    <!-- Mute / Unmute Button -->
+    <button id="mute-btn">🔊 Mute</button>
+
+    <!-- Combined Snow Globe Container -->
     <div id="snow-globe">
         <div id="particles"></div>
+        
+        <!-- Central Character -->
+        <div id="focal-point">⛄</div> 
+        
         <div id="ground"></div>
     </div>
 
-    <!-- Particles Library Link-->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- Storm Control Slider -->
+    <div id="controls">
+        <label for="speed-slider">Wind Speed: </label>
+        <input type="range" id="speed-slider" min="1" max="10" value="2">
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="bg-music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" loop></audio>
+    <audio id="shake-sound" src="Bell-ring.flac"></audio>
+    
+    <!-- tsParticles Library Link -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.0/tsparticles.bundle.min.js"></script>
 
     <!-- Custom JS Script -->
     <script src="script.js"></script>

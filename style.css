@@ -1,52 +1,132 @@
-*{
-    padding :0;
+* {
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/* Center */
+/* Cozy dark room background */
 body {
     display: flex;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    overflow: hidden; /* Prevent scrolling */
+    overflow: hidden;
     justify-content: center;
     align-items: center;
-    background-color: #2e2e2e;
+    background: radial-gradient(circle, #1a1c2e 0%, #0d0e15 100%);
 }
 
 #snow-globe {
     width: 85vmin;
     height: 85vmin;
-    background: #45b3e0; /* Fallback sky blue */
-    background-size: cover;
+    background: linear-gradient(180deg, #0b132b 0%, #1c2541 40%, #5bc0be 100%);
     border-radius: 50%;
     overflow: hidden;
     margin: auto;
-    box-shadow: 0px 0px 20px 35px rgba(255, 255, 255, 0.05);
+    box-sizing: border-box;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 30px 40px rgba(255, 255, 255, 0.05), 
+                inset 0 0 50px rgba(0, 0, 0, 0.6);
     position: relative;
+    cursor: pointer;
+    transition: background 1s ease; /* Smooth sunset theme transition */
+}
+
+/* Sunset Theme overlay */
+#snow-globe.sunset-theme {
+    background: linear-gradient(180deg, #3a1c71 0%, #d76d77 50%, #ffaf7b 100%);
+}
+
+/* Glass Reflection Highlight */
+#snow-globe::after {
+    content: '';
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 35%;
+    height: 15%;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    border-radius: 50%;
+    transform: rotate(-15deg);
+    pointer-events: none; /* Allows clicks to pass through */
 }
 
 #particles {
     width: 100%;
     height: 75%;
-    
 }
 
+/* A soft, curved snowbank */
 #ground {
     height: 25%;
     width: 100%;
-    background: #bebebe;
+    background: linear-gradient(180deg, #ffffff 0%, #d4e7f2 100%);
+    border-top: 3px solid #ffffff;
+    border-radius: 50% 50% 0 0 / 15% 15% 0 0;
+    box-shadow: inset 0 10px 15px rgba(255, 255, 255, 0.5);
 }
 
 @keyframes shake {
-    0%, 100% {transform: rotate(0deg);}
-    25% {transform: rotate(15deg);}
-    50% {transform: rotate(-15deg);}
-    75% {transform: rotate(10deg);}
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(15deg); }
+    50% { transform: rotate(-15deg); }
+    75% { transform: rotate(10deg); }
 }
 
 .shake {
     animation: shake 1s ease-in-out;
+}
+
+#mute-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 18px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-family: sans-serif;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: background 0.3s, transform 0.2s;
+    z-index: 10;
+}
+
+#mute-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+}
+
+#focal-point {
+    position: absolute;
+    bottom: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5rem;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Storm Control Slider Styling */
+#controls {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    font-family: sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#speed-slider {
+    cursor: pointer;
+    accent-color: #5bc0be; /* Changes slider color to match our theme blue/cyan */
 }
