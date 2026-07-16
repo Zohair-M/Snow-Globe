@@ -1,29 +1,25 @@
-# ❄️ Digital Snow Globe
+# Custom Digital Snow Globe
 
-An interactive, highly customizable browser-based digital snow globe. Design your own scene, customize the weather with any emoji combination, paint the sky with live gradient color pickers, upload your own background/music files, and share your customized globe as a digital greeting card with friends!
+This is a web-based digital snow globe project I built for a Hack Club Jam(Used the tutorial). You can customize almost everything about it change the character inside, pick different weather patterns, design a custom gradient background, or even upload your own music and images. You can also type a custom message and generate a shareable link to send to your friends.
 
----
+## What it can do
 
-## 🚀 Features
+* **Shake it up:** You can click/tap to shake the globe on desktop, or shake your physical phone using the mobile gyroscope.
+* **Infinite characters:** Choose a preset character (like the snowman) or type in any emoji or symbol you want to put inside the globe.
+* **Custom weather:** Make standard snow fall, or type custom emojis (like 🍕 or 🦖) to rain down from the sky.
+* **Dynamic sky gradients:** Use the built-in color wheels to pick any two colors and blend your own background sky in real-time.
+* **Upload your own files:** You can upload your own custom background images or custom music files directly from your computer or phone.
+* **Shareable greeting cards:** You can type a quick message in the "Share" menu to generate a custom link. When a friend opens the link, your custom message will float inside the globe with your exact background, character, and speed settings.
+* **Music & mute:** Toggle between cozy ambient tracks or your uploaded audio, with a mute button in the top corner.
 
-- **Interactive Shaking:** Click or tap the globe on desktop, or shake your physical phone on mobile (utilizing the device's Gyroscope / DeviceMotion API).
-- **Infinite Character & Weather Customization:**
-  - **Custom Characters:** Select a built-in classic or type *any* emoji or symbol to place in the center of the globe.
-  - **Custom Weather:** Type any sequence of emojis (e.g., `🍕🦖💰` or `✨🪐👽`) to rain down inside the globe.
-- **Interactive Design Controls:**
-  - **Live Color Pickers:** Use native color sliders to dynamically paint a custom sky gradient in real-time.
-  - **Device Uploads:** Upload your own background images and custom soundtrack files directly from your device (processed safely offline inside your browser).
-  - **Wind Speed Control:** Adjust the speed of the falling weather dynamically with the wind slider.
-- **Shareable Greeting Cards:** Open the "Share Globe" panel, type a personalized greeting, and generate a custom link. Your custom message, character, sky gradient, weather style, and speed settings are encoded directly into the URL to share with friends.
-- **Cozy Soundtracks:** Switch between built-in ambient tracks or your uploaded audio, with an easily accessible mute toggle in the corner.
+## How it was built
 
----
+I built this project using HTML, CSS, and vanilla JavaScript. 
+* The custom falling physics and emoji rain are powered by the **tsParticles** library.
+* The design is built using CSS flexbox, native HTML5 color pickers, and glassmorphic reflection overlays.
+* The local image and music uploads are handled offline using browser-based Object URLs, meaning no servers or databases are required to run the app.
+* The sharing system parses the URL parameters on load to reconstruct the sender's exact globe configuration.
 
-## 🛠️ Built With
+## AI Disclosure
 
-- **HTML5 & CSS3** (Custom glassmorphism reflection overlay, native HTML5 color pickers, responsive control dock, and keyframe shake animations)
-- **Vanilla JavaScript** (ES6+, DOM manipulation, HTML5 File Reader & Object URLs, URLSearchParams API, and DeviceMotion API integrations)
-- **[tsParticles](https://particles.js.org/)** (For rendering the highly dynamic, character-based particle simulation)
-tions)
-- **AI** I used AI for minimal code debugging and on how to input the [tsParticles](https://particles.js.org/) into the Web App
----
+I used AI to assist with debugging the tsParticles configuration, resolving a scope issue with the custom audio player, and setting up the responsive layout for the control dock(Also the README.md before but not now).
