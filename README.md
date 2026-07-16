@@ -24,5 +24,6 @@ An interactive, highly customizable browser-based digital snow globe. Design you
 - **HTML5 & CSS3** (Custom glassmorphism reflection overlay, native HTML5 color pickers, responsive control dock, and keyframe shake animations)
 - **Vanilla JavaScript** (ES6+, DOM manipulation, HTML5 File Reader & Object URLs, URLSearchParams API, and DeviceMotion API integrations)
 - **[tsParticles](https://particles.js.org/)** (For rendering the highly dynamic, character-based particle simulation)
-
+tions)
+- **AI** I used AI for minimal code debugging and on how to input the [tsParticles](https://particles.js.org/) into the Web App
 ---
