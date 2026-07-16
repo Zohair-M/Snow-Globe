@@ -12,7 +12,7 @@
     <button id="mute-btn">🔊 Mute</button>
 
     <!-- Combined Snow Globe Container -->
-    <div id="snow-globe">
+    <div id="snow-globe" class="theme-night">
         <div id="particles"></div>
         
         <!-- Central Character -->
@@ -21,10 +21,51 @@
         <div id="ground"></div>
     </div>
 
-    <!-- Storm Control Slider -->
-    <div id="controls">
-        <label for="speed-slider">Wind Speed: </label>
-        <input type="range" id="speed-slider" min="1" max="10" value="2">
+    <!-- Multi-Control Panel -->
+    <div id="control-panel">
+        <!-- Wind Speed Control -->
+        <div class="control-group">
+            <label for="speed-slider">💨 Wind Speed: </label>
+            <input type="range" id="speed-slider" min="1" max="10" value="2">
+        </div>
+        
+        <!-- Character Selector -->
+        <div class="control-group">
+            <label for="char-select">👤 Character: </label>
+            <select id="char-select">
+                <option value="⛄">⛄ Snowman</option>
+                <option value="🎄">🎄 Holiday Tree</option>
+                <option value="🏠">🏠 Cozy Cabin</option>
+                <option value="🦌">🦌 Reindeer</option>
+                <option value="🦖">🦖 Dino Winter</option>
+            </select>
+        </div>
+
+        <!-- Sky Theme Selector -->
+        <div class="control-group">
+            <label for="theme-select">🎨 Sky Theme:</label>
+            <select id="theme-select">
+                <option value="theme-night">🌃 Midnight Blue</option>
+                <option value="theme-sunset">🌅 Golden Sunset</option>
+                <option value="theme-aurora">🌌 Northern Lights</option>
+                <option value="theme-spooky">🎃 Spooky Night</option>
+            </select>
+            <!-- Custom Image Upload -->
+            <label for="bg-upload" class="upload-btn" title="Upload Background Image">📁</label>
+            <input type="file" id="bg-upload" accept="image/*" style="display: none;">
+        </div>
+        <!-- Music Track Selector -->
+        <div class="control-group">
+            <label for="music-select">🎵 Music:</label>
+            <select id="music-select">
+                <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3">Cozy Chimes</option>
+                <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">Warm Melodies</option>
+                <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">Retro Chill</option>
+            </select>
+            <!-- Custom Audio Upload Trigger -->
+            <label for="music-upload" class="upload-btn" title="Upload custom music track">📤</label>
+            <input type="file" id="music-upload" accept="audio/*" style="display: none;">
+        </div>
     </div>
 
     <!-- Audio Elements -->

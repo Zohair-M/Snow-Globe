@@ -17,9 +17,8 @@ body {
 }
 
 #snow-globe {
-    width: 85vmin;
-    height: 85vmin;
-    background: linear-gradient(180deg, #0b132b 0%, #1c2541 40%, #5bc0be 100%);
+    width: 75vmin; /* Reduced size slightly to accommodate bottom controls */
+    height: 75vmin;
     border-radius: 50%;
     overflow: hidden;
     margin: auto;
@@ -29,12 +28,24 @@ body {
                 inset 0 0 50px rgba(0, 0, 0, 0.6);
     position: relative;
     cursor: pointer;
-    transition: background 1s ease; /* Smooth sunset theme transition */
+    transition: background 1s ease; /* Smooth background transitions */
 }
 
-/* Sunset Theme overlay */
-#snow-globe.sunset-theme {
+/* Theme Definitions */
+#snow-globe.theme-night {
+    background: linear-gradient(180deg, #0b132b 0%, #1c2541 40%, #5bc0be 100%);
+}
+
+#snow-globe.theme-sunset {
     background: linear-gradient(180deg, #3a1c71 0%, #d76d77 50%, #ffaf7b 100%);
+}
+
+#snow-globe.theme-aurora {
+    background: linear-gradient(180deg, #051937 0%, #004d7a 30%, #008793 60%, #00bf72 100%);
+}
+
+#snow-globe.theme-spooky {
+    background: linear-gradient(180deg, #0f0c1b 0%, #302b63 50%, #f12711 100%);
 }
 
 /* Glass Reflection Highlight */
@@ -48,7 +59,7 @@ body {
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
     border-radius: 50%;
     transform: rotate(-15deg);
-    pointer-events: none; /* Allows clicks to pass through */
+    pointer-events: none;
 }
 
 #particles {
@@ -111,22 +122,71 @@ body {
     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.3));
 }
 
-/* Storm Control Slider Styling */
-#controls {
-    margin-bottom: 20px;
+/* Control Panel Dock Styling */
+#control-panel {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 15px 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     color: #ffffff;
     font-family: sans-serif;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px 20px;
-    border-radius: 20px;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+    max-width: 90vw;
+    z-index: 5;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Control Dropdown Selectors */
+#control-panel select {
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 10px;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+}
+
+#control-panel select:hover {
+    background: rgba(0, 0, 0, 0.7);
 }
 
 #speed-slider {
     cursor: pointer;
-    accent-color: #5bc0be; /* Changes slider color to match our theme blue/cyan */
+    accent-color: #5bc0be;
 }
+
+/* style for Upload button Icons */
+.upload-btn {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.1s;
+    font-size: 0.85rem;
+    user-select: none;
+}
+
+.upload-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+}
+
